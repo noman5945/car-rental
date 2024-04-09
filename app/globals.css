@@ -217,3 +217,8 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 /* END: search manufacturer styles */
+
+/* Start of Show more styles*/
+.show_more_button_container {
+  @apply my-4 flex p-3 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition ease-in;
+}

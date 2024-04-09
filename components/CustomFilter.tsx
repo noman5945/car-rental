@@ -10,8 +10,11 @@ function CustomFilter({ title, options }: CustomFilterProps) {
   const [selected, setSelected] = useState(options[0]);
   const router = useRouter();
   const updateURL = (e: { title: string; value: string }) => {
-    const newSearchURL = updateSearchParams(title, e.value.toLowerCase());
-    router.push(newSearchURL);
+    const newSearchURL = updateSearchParams(
+      title.toLowerCase(),
+      e.value.toLowerCase()
+    );
+    router.push(newSearchURL, { scroll: false });
   };
   return (
     <div className=" w-fit">

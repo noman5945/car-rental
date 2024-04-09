@@ -33,6 +33,12 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
 export const generateCarImageUrl = () => {};
 
+/**
+ * function that adds query with the link string according to which page will be refreshed and data will be loaded
+ * @param type {string}  query type e.g limit,year,model,manufacturer
+ * @param value {string} query value that must be converted into string
+ * @returns {string} updated link with queries to fetch data
+ */
 export const updateSearchParams = (type: string, value: string) => {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.set(type, value);

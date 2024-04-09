@@ -7,11 +7,11 @@ import Image from "next/image";
 
 export default async function Home({ searchParams }: any) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "BMW",
+    manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
     limit: searchParams.limit || 10,
-    model: searchParams.model || "M8",
+    model: searchParams.model || "",
   });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   return (
@@ -35,7 +35,10 @@ export default async function Home({ searchParams }: any) {
                   <CarCard key={index} car={car} />
                 ))}
               </div>
-              <ShowMore />
+              <ShowMore
+                pageNumber={(searchParams.limit || 10) / 10}
+                isNext={(searchParams.limit || 10) > allCars.length}
+              />
             </section>
           ) : (
             <div className="home__error-container">
