@@ -19,11 +19,13 @@ function Navbar() {
             className=" object-contain"
           ></Image>
         </Link>
-        <CustomButton
-          title="Sign In"
-          contentStyle="text-primary-blue rounded-full bg-white min-w-[130px]"
-          btnType="button"
-        ></CustomButton>
+        <Link href={"/SignUp"}>
+          <CustomButton
+            title="Sign In"
+            contentStyle="text-primary-blue rounded-full bg-white min-w-[130px]"
+            btnType="button"
+          ></CustomButton>
+        </Link>
       </nav>
     </header>
   );
